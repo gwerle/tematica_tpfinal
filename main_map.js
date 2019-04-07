@@ -20,7 +20,7 @@ window.onload = function() {
 //L.geoJSON(andar1).addTo(mapa).bindPopup(andar1.properties.EDIFICIO)
 var primeiroandar = L.geoJSON(andar1, {
     onEachFeature: function(feicao, camada) {
-      camada.bindPopup(feicao.properties.SETORM2);
+      camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
   }
 })//.addTo(mapa);
 
@@ -42,4 +42,18 @@ L.control.layers(baseCartografica, informacaoTematica).addTo(mapa);
 L.control.scale({position: 'bottomleft', imperial: 'false'}).addTo(mapa);
 
 var miniMap = new L.Control.MiniMap(osm).addTo(mapa);
+
+mapa.locate({
+  setView: true,
+  maxZoom: 22,
+  timeout: 100000
+  });
+
+  mapa.on('locationfound', function(evento) {
+    L.marker(evento. latlng).addTo(mapa);  L.circle(evento.latlng, evento.accuracy / 2).addTo(mapa);
+  });
+
+L.control.mousePosition().addTo(mapa);
+
+
 }
