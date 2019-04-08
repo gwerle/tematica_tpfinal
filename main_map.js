@@ -19,22 +19,92 @@ window.onload = function() {
 
 //L.geoJSON(andar1).addTo(mapa).bindPopup(andar1.properties.EDIFICIO)
 var primeiroandar = L.geoJSON(andar1, {
+  color: "#A0522D",
+  fillColor: "#FFDEAD",
+  opacity: 0.7,
+  fillOpacity: 0.6,
     onEachFeature: function(feicao, camada) {
-      camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+      camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
   }
 })//.addTo(mapa);
 
-    var baseCartografica = {
-    //"OpenStreetMap": osm,
-    "Mapbox Streets": mapbox
+var segundoandar = L.geoJSON(andar2, {
+  color: "#A0522D",
+  fillColor: "#CD853F",
+  opacity: 0.9,
+  fillOpacity: 0.9,
+    onEachFeature: function(feicao, camada) {
+      camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+  }
+})//.addTo(mapa);
 
-    }
+var terceiroandar = L.geoJSON(andar3, {
+  color: "#8B4513",
+  fillColor: "#B8860B",
+  opacity: 1,
+  fillOpacity: 1,
+    onEachFeature: function(feicao, camada) {
+      camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+  }
+})//.addTo(mapa);
+
+var areas_verdes = L.geoJSON(ufpr_areas_verdes, {
+  color: "#94d180",
+}
+)//.addTo(mapa);
+
+var arruamento = L.geoJSON(ufpr_arruamento, {
+  color: "#b07f55",
+})
+
+var atletismo = L.geoJSON(ufpr_atletismo, {
+  color: "#b7484b",
+})
+
+var calcada = L.geoJSON(ufpr_calcada, {
+  color: "#525252",
+})
+
+var campo_quadra = L.geoJSON(ufpr_campo_quadra, {
+  color: "#2f5722",
+})
+
+var construcao = L.geoJSON(ufpr_construcao, {
+  color: "#cccc00",
+})
+
+var detalhes = L.geoJSON(ufpr_detalhes, {
+  color: "#000000",
+})
+
+var edificacao = L.geoJSON(ufpr_edificacao, {
+  color: "#cccccc",
+})
+
+var escada_rampa = L.geoJSON(ufpr_escada_rampa, {
+  color: "#8a3829",
+})
+
+var estacionamento = L.geoJSON(ufpr_estacionamento, {
+  color: "#e8718d",
+})
+
+var baseCartografica = {
+//"OpenStreetMap": osm,
+"Mapbox Streets": mapbox
+}
+
 var grupoandar1 = L.layerGroup([primeiroandar]);
+var grupoandar2 = L.layerGroup([segundoandar]);
+var grupoandar3 = L.layerGroup([terceiroandar]);
+var ufpr_geral = L.layerGroup([areas_verdes,calcada,campo_quadra,construcao,detalhes,edificacao,escada_rampa,estacionamento,atletismo,arruamento]);
 
 //Mapas de sobreposiçao
 var informacaoTematica = {
+"Mapa Geral": ufpr_geral,
 "Andar 1": grupoandar1,
-//"Andar2": grupoandar2
+"Andar 2": grupoandar2,
+"Andar 3": grupoandar3,
 }
 
 //Adicionar objetos ao controle de camadas
