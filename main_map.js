@@ -17,6 +17,8 @@ window.onload = function() {
     }
   ).addTo(mapa);
 
+
+
 //L.geoJSON(andar1).addTo(mapa).bindPopup(andar1.properties.EDIFICIO)
 var primeiroandar = L.geoJSON(andar1, {
   color: "#A0522D",
@@ -49,43 +51,53 @@ var terceiroandar = L.geoJSON(andar3, {
 })//.addTo(mapa);
 
 var areas_verdes = L.geoJSON(ufpr_areas_verdes, {
+  weight: 0.2,
   color: "#94d180",
 }
 )//.addTo(mapa);
 
 var arruamento = L.geoJSON(ufpr_arruamento, {
+  weight: 0.5,
   color: "#b07f55",
 })
 
 var atletismo = L.geoJSON(ufpr_atletismo, {
+  weight: 0.5,
   color: "#b7484b",
 })
 
 var calcada = L.geoJSON(ufpr_calcada, {
+  weight: 0.5,
   color: "#525252",
 })
 
 var campo_quadra = L.geoJSON(ufpr_campo_quadra, {
+  weight: 0.5,
   color: "#2f5722",
 })
 
 var construcao = L.geoJSON(ufpr_construcao, {
+  weight: 0.5,
   color: "#cccc00",
 })
 
 var detalhes = L.geoJSON(ufpr_detalhes, {
+  weight: 0.7,
   color: "#000000",
 })
 
 var edificacao = L.geoJSON(ufpr_edificacao, {
-  color: "#cccccc",
+  weight: 0.8,
+  color: "#969696",
 })
 
 var escada_rampa = L.geoJSON(ufpr_escada_rampa, {
+  weight: 0.5,
   color: "#8a3829",
 })
 
 var estacionamento = L.geoJSON(ufpr_estacionamento, {
+  weight: 0.5,
   color: "#e8718d",
 })
 
@@ -113,17 +125,13 @@ L.control.scale({position: 'bottomleft', imperial: 'false'}).addTo(mapa);
 
 var miniMap = new L.Control.MiniMap(osm).addTo(mapa);
 
-mapa.locate({
-  setView: true,
-  maxZoom: 22,
-  timeout: 100000
-  });
-
-  mapa.on('locationfound', function(evento) {
-    L.marker(evento. latlng).addTo(mapa);  L.circle(evento.latlng, evento.accuracy / 2).addTo(mapa);
-  });
+var lc = L.control.locate({
+    position: 'topright',
+    strings: {
+        title: "Clique para atualizar sua localização!"
+    }
+}).addTo(mapa);
 
 L.control.mousePosition().addTo(mapa);
-
 
 }
