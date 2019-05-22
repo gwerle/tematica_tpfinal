@@ -267,7 +267,11 @@ window.onload = function() {
     L.control.layers(baseCartografica, informacaoTematica).addTo(mapa);
     L.control.scale({ position: 'bottomleft', imperial: 'false' }).addTo(mapa);
 
-    var miniMap = new L.Control.MiniMap(osm).addTo(mapa);
+    var miniMap = new L.Control.MiniMap(osm, { toggleDisplay: true }).addTo(mapa);
+
+    mapa.on('baselayerchange', function(e) {
+        miniMap.changeLayer(osm[e.name]);
+    })
 
     var lc = L.control.locate({
         position: 'topright',
