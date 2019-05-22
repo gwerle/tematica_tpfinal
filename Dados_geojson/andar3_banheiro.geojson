@@ -1,0 +1,9 @@
+var andar3_banheiro = {
+"type": "FeatureCollection",
+"name": "andar3_banheiro",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id_temp": 111, "ANDAR": "3", "EDIFICIO": "Farmacologia", "LOCAL": "Politécnico", "COD_LOCAL": "CCJP", "COD_EDIF": "34", "SIGLA_EDIF": null, "SETOR": "Ciências Biológicas", "COD_SETOR": "3", "SIGLA_SETO": "SCB", "DEPARTAMEN": null, "SIGLA_DEP": null, "COD_DEP": null, "AMBIENTE": "Banheiro", "TIPO_AMB": "Banheiro", "COD_TP_AMB": "1", "COD_AMB": null, "NOME_PROF": null, "SIGLA_AMB": null, "AREA_M2": 3.8, "ROTULOS": 38, "SUB_TP_AMB": null }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -49.232895465192755, -25.446159693648021 ], [ -49.232902944121257, -25.446176353731975 ], [ -49.232920405398239, -25.446169704085939 ], [ -49.232912926467627, -25.446153044002727 ], [ -49.232895465192755, -25.446159693648021 ] ] ] } },
+{ "type": "Feature", "properties": { "id_temp": 113, "ANDAR": "3", "EDIFICIO": "Farmacologia", "LOCAL": "Politécnico", "COD_LOCAL": "CCJP", "COD_EDIF": "34", "SIGLA_EDIF": null, "SETOR": "Ciências Biológicas", "COD_SETOR": "3", "SIGLA_SETO": "SCB", "DEPARTAMEN": null, "SIGLA_DEP": null, "COD_DEP": null, "AMBIENTE": "Banheiro", "TIPO_AMB": "Banheiro", "COD_TP_AMB": "1", "COD_AMB": null, "NOME_PROF": null, "SIGLA_AMB": null, "AREA_M2": 6.53, "ROTULOS": 38, "SUB_TP_AMB": null }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -49.232908193677659, -25.446142500071407 ], [ -49.232920405398239, -25.446169704085939 ], [ -49.232938798149497, -25.446162700642773 ], [ -49.232926586425279, -25.446135496629587 ], [ -49.232908193677659, -25.446142500071407 ] ] ] } }
+]
+}
