@@ -18,7 +18,6 @@ window.onload = function() {
         }
     ).addTo(mapa);
 
-
     // primeiro andar
 
     var primeiroandar_banheiro = L.geoJSON(andar1_banheiro, {
