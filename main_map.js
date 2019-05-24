@@ -1,5 +1,6 @@
 window.onload = function() {
     var mapa = L.map('meumapa', {
+        fullscreenControl: true,
         minZoom: 18,
         maxZoom: 22,
     }).setView([-25.447400, -49.232800], 19)
