@@ -15,7 +15,6 @@ function detectar_mobile() {
   }
 }
 
-console.log(a)
 window.onload = function() {
     var mapa = L.map('meumapa', {
         fullscreenControl: true,
@@ -35,7 +34,6 @@ window.onload = function() {
             accessToken: 'pk.eyJ1IjoiZ3dlcmxlIiwiYSI6ImNqdmlqM2s1NDA2OGUzem85emx2eTN3cGEifQ.1vt36xMMi_NtrfiYUFYMOA',
         }
     ).addTo(mapa);
-
     // primeiro andar
 
     var primeiroandar_banheiro = L.geoJSON(andar1_banheiro, {
@@ -62,9 +60,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Departamento: " + feicao.properties.DEPARTAMEN + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -76,9 +76,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Departamento: " + feicao.properties.DEPARTAMEN + "<br/> Professor(a): " + feicao.properties.NOME_PROF + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
-                camada.bindTooltip(feicao.properties.AMBIENTE + "<br/> Professor(a): " + feicao.properties.NOME_PROF, {
+                if(a == false){
+                camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -90,9 +92,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -105,9 +109,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -119,9 +125,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Departamento: " + feicao.properties.DEPARTAMEN + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -133,9 +141,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Departamento: " + feicao.properties.DEPARTAMEN + "<br/> Professor(a): " + feicao.properties.NOME_PROF + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
-                camada.bindTooltip(feicao.properties.AMBIENTE + "<br/> Professor(a): " + feicao.properties.NOME_PROF, {
+                if(a == false){
+                camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -147,9 +157,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -162,9 +174,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -176,9 +190,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Departamento: " + feicao.properties.DEPARTAMEN + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -190,9 +206,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Sala: " + feicao.properties.COD_AMB + "<br/> Departamento: " + feicao.properties.DEPARTAMEN + "<br/> Professor(a): " + feicao.properties.NOME_PROF + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
-                camada.bindTooltip(feicao.properties.AMBIENTE + "<br/> Professor(a): " + feicao.properties.NOME_PROF, {
+                if(a == false){
+                camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
@@ -204,9 +222,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
