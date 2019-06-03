@@ -1,3 +1,21 @@
+var a = true;
+function detectar_mobile() {
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return a = true;
+  }
+ else {
+    return a = false;
+  }
+}
+
+console.log(a)
 window.onload = function() {
     var mapa = L.map('meumapa', {
         fullscreenControl: true,
@@ -28,9 +46,11 @@ window.onload = function() {
             weight: 0.6,
             onEachFeature: function(feicao, camada) {
                 camada.bindPopup(feicao.properties.AMBIENTE + "<br/> Área: " + feicao.properties.AREA_M2 + "m²");
+                if(a == false){
                 camada.bindTooltip(feicao.properties.AMBIENTE, {
                     permanent: false,
                 })
+              }
             }
         }) //.addTo(mapa);
 
