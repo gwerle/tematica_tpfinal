@@ -18,19 +18,16 @@ function detectar_mobile() {
 window.onload = function() {
     var mapa = L.map('meumapa', {
         fullscreenControl: true,
-        minZoom: 18,
-        maxZoom: 22,
+
     }).setView([-25.447400, -49.232800], 19)
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        maxZoom: 22,
+
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
     });
     var mapbox = L.tileLayer(
         'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-            minZoom: 15,
-            maxZoom: 22,
-            id: 'mapbox.streets',
-            style: 'mapbox://styles/mapbox/streets-v11',
+            id: 'mapbox.satellite',
+            style: 'mapbox://styles/mapbox/satellite-v9',
             accessToken: 'pk.eyJ1IjoiZ3dlcmxlIiwiYSI6ImNqdmlqM2s1NDA2OGUzem85emx2eTN3cGEifQ.1vt36xMMi_NtrfiYUFYMOA',
         }
     ).addTo(mapa);
